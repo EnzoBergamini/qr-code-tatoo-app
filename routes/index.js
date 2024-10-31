@@ -3,7 +3,17 @@ const { route } = require('../app');
 var router = express.Router();
 
 router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
+  const db = req.app.get('db');
+
+  db.get('SELECT * FROM links ORDER BY created_at DESC LIMIT 1', function (err, row) {
+    if (err) {
+      return next(err);
+    }
+
+    const url = row.url != undefined ? row.url : "https://caca.com";
+
+    res.render('index', { url: url });
+  });
 });
 
 router.post('/api/link', function (req, res, next) {

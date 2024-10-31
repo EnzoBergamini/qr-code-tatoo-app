@@ -33,12 +33,9 @@ db.serialize(() => {
 
     // if the table is empty, insert a row
     db.get('SELECT COUNT(*) as count FROM links', (err, row) => {
+
         if (row.count === 0) {
             db.run('INSERT INTO links (url) VALUES (?)', ['https://www.google.com']);
-        } else {
-            db.get('SELECT * FROM links ORDER BY id DESC LIMIT 1', (err, row) => {
-                app.set('currentLink', row.url);
-            });
         }
     });
 
