@@ -79,3 +79,41 @@ header {
   font-weight: bold;
   text-align: center;
 }
+
+@media (max-width: 800px) {
+  .enzo {
+    width: 230px;
+  }
+
+  .toque {
+    width: 90px;
+    position: absolute;
+    top: 200px;
+    left: 60px;
+    animation: float 2s ease-in-out infinite;
+  }
+
+  .bubble {
+    position: absolute;
+    top: 350px;
+    left: 170px;
+  }
+
+  .bubble__image {
+    width: 170px;
+  }
+
+  .bubble__text {
+    position: absolute;
+    width: 130px;
+    top: 50px;
+    left: 35px;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .header__container {
+    padding-right: 110px;
+  }
+}
