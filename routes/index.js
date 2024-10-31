@@ -12,6 +12,8 @@ router.get('/', function (req, res, next) {
 
     const url = row.url != undefined ? row.url : "https://caca.com";
 
+    console.log(url);
+
     res.render('index', { url: url });
   });
 });

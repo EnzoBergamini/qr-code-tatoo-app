@@ -53,9 +53,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 
-// catch 404 and forward to error handler for invalid routes
+// catch 404 and redirect to the home page
 app.use(function (req, res, next) {
-    next(createError(404));
+    res.redirect('/');
 });
 
 // error handler
@@ -66,7 +66,7 @@ app.use(function (err, req, res, next) {
 
     // render the error page
     res.status(err.status || 500);
-    res.render('error');
+    res.json('error');
 });
 
 // close the database connection when the app is terminated

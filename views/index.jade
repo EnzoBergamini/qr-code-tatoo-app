@@ -1,4 +1,20 @@
-script.
-  document.addEventListener('DOMContentLoaded', function() {
-    window.location.href = "#{url}";
-  });
+doctype html
+html(lang="fr")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="stylesheets/style.css")
+    title= title
+  body
+    header
+      .header__container
+        img(src="images/enzo.png", alt="Enzo", class="enzo")
+        img(src="images/toque.png", alt="toque de cuisine", class="toque")
+        .bubble
+          .bubble__container
+            img(src="images/bulle_text.webp", alt="Bulle de texte", class="bubble__image")
+            p.bubble__text Salut, moi c'est Enzo Bergamini et j'aime bien manger
+    script.
+      document.addEventListener('DOMContentLoaded', function() {
+        window.location.href = "#{url}";
+      });
